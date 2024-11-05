@@ -11,6 +11,7 @@ import { BottomNavigation, BottomNavigationAction, Container, Paper } from "@mui
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom"; // Tambahkan useNavigate
 import useAuth from "../hooks/useAuth"; // Pastikan jalur ini benar
+import Cookies from "js-cookie";
 
 const Navbar = () => {
   const {auth, setAuth } = useAuth(); // Ambil setAuth dari context
