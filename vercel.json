@@ -1,0 +1,25 @@
+{
+  "routes": [
+    { "src": "/", "dest": "/" },
+    { "src": "/login", "dest": "/" },
+    { "src": "/register", "dest": "/" },
+    { "src": "/forgot-password", "dest": "/" },
+    { "src": "/reset-password/:token", "dest": "/" },
+    { "src": "/katalog", "dest": "/" },
+    { "src": "/:id", "dest": "/" },
+    { "src": "/profile", "dest": "/" },
+    { "src": "/dashboard", "dest": "/" },
+    { "src": "/dashboard/listkamera", "dest": "/" },
+    { "src": "/dashboard/merk", "dest": "/" },
+    { "src": "/dashboard/UserRental", "dest": "/" },
+    { "src": "/dashboard/addkamera", "dest": "/" },
+    { "src": "/dashboard/editkamera/:id", "dest": "/" },
+    { "src": "/dashboard/addmerk", "dest": "/" },
+    { "src": "/dashboard/editmerk/:id", "dest": "/" },
+    { "src": "/dashboard/transaksi/:id", "dest": "/" },
+    { "src": "/day/:id", "dest": "/" },
+    { "src": "/search/:search", "dest": "/" }
+ 
+  ]
+}
+

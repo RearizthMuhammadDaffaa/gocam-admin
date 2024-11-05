@@ -1,0 +1,17 @@
+{
+  "short_name":"RENTAL KAMERA APP",
+  "name":"RENTAL KAMERA PWA",
+  "icons":[
+    {
+      "src":"/public/android-launchericon-192-192.png",
+      "type":"image/png",
+      "sizes":"1024x1024",
+      "purpose":"any maskable"
+    }
+  ],
+  "start_url":".",
+  "display":"standalone",
+  "theme_color":"#000000",
+  "background_color":"#ffffff",
+  "prefer_related_applications": false
+}
