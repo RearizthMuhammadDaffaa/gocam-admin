@@ -1,22 +1,40 @@
 {
-  "routes": [
-    { "src": "/login", "dest": "/" },
-    { "src": "/register", "dest": "/" },
-    { "src": "/forgot-password", "dest": "/" },
-    { "src": "/reset-password/(.*)", "dest": "/" },
-    { "src": "/katalog", "dest": "/" },
-    { "src": "/profile", "dest": "/" },
-    { "src": "/dashboard", "dest": "/" },
-    { "src": "/dashboard/listkamera", "dest": "/" },
-    { "src": "/dashboard/merk", "dest": "/" },
-    { "src": "/dashboard/UserRental", "dest": "/" },
-    { "src": "/dashboard/addkamera", "dest": "/" },
-    { "src": "/dashboard/editkamera/(.*)", "dest": "/" },
-    { "src": "/dashboard/addmerk", "dest": "/" },
-    { "src": "/dashboard/editmerk/(.*)", "dest": "/" },
-    { "src": "/dashboard/transaksi/(.*)", "dest": "/" },
-    { "src": "/day/(.*)", "dest": "/" },
-    { "src": "/search/(.*)", "dest": "/" },
-    { "src": "/(.*)", "dest": "/" }
-  ]
+  "rewrites": [
+    { "source": "/login", "destination": "/" },
+    { "source": "/register", "destination": "/" },
+    { "source": "/forgot-password", "destination": "/" },
+    { "source": "/reset-password/(.*)", "destination": "/" },
+    { "source": "/katalog", "destination": "/" },
+    { "source": "/profile", "destination": "/" },
+    { "source": "/dashboard", "destination": "/" },
+    { "source": "/dashboard/listkamera", "destination": "/" },
+    { "source": "/dashboard/merk", "destination": "/" },
+    { "source": "/dashboard/UserRental", "destination": "/" },
+    { "source": "/dashboard/addkamera", "destination": "/" },
+    { "source": "/dashboard/editkamera/(.*)", "destination": "/" },
+    { "source": "/dashboard/addmerk", "destination": "/" },
+    { "source": "/dashboard/editmerk/(.*)", "destination": "/" },
+    { "source": "/dashboard/transaksi/(.*)", "destination": "/" },
+    { "source": "/day/(.*)", "destination": "/" },
+    { "source": "/search/(.*)", "destination": "/" },
+    { "source": "/(.*)", "destination": "/" }
+  ],
+  "headers": [
+    {
+      "source": "/serviceworker.js",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" },
+        { "key": "Service-Worker-Allowed", "value": "/" }
+      ]
+    },
+    {
+      "source": "/manifest.json",
+      "headers": [
+        { "key": "Content-Type", "value": "application/json" },
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
 }
