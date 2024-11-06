@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 const UserRental = () => {
 
   const [data,setData] = useState([]);
+  const [msg,setMsg] = useState('');
   const getData = async ()=>{
     const response = await axios.get(`${import.meta.env.VITE_API}transaksi`)
     setData(response.data)
@@ -19,9 +20,11 @@ const UserRental = () => {
   const deletekamera = async (productId) => {
     try {
       await axios.delete(`${import.meta.env.VITE_API}transaksi/${productId}`);
+      setMsg('data berhasil dihapus');
       getData();
     } catch (error) {
       console.log(error);
+      setMsg(error.message)
     }
   };
 
@@ -57,7 +60,7 @@ const UserRental = () => {
           Data Kamera
         </Typography>
       </Box>
-      
+          {msg && <p style={{textAlign:'center',color:'green'}}>{msg}</p>}
        </Container>
          <Container
           sx={{

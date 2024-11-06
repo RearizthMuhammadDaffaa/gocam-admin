@@ -22,7 +22,7 @@ const AddKamera = () => {
   }
 
   const getDataMerk = async ()=>{
-    const response = await axios.get('http://localhost:5000/merk')
+    const response = await axios.get(`${import.meta.env.VITE_API}merk`)
     setData(response.data)
   }
 
