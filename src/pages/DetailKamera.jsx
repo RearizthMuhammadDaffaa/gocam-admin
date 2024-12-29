@@ -324,9 +324,9 @@ const DetailKamera = () => {
       marginBottom:{md:'100px',sm:'0'},
       height:'200px'
     }}>
-      <Link to={transaksi? `/transaksi/${id}`:`/day/${id}`}>
+      {/* <Link to={transaksi? `/transaksi/${id}`:`/day/${id}`}>
       <Button variant='contained' sx={{width:'100%',borderRadius:'16px'}}>Pesan Sekarang</Button>
-      </Link>
+      </Link> */}
     </Box>
     </Stack>
     

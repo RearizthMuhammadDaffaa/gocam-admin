@@ -86,7 +86,7 @@ const Login = () => {
       <div className="submit-container">
           
           <button type="submit" className= "submit">Login</button>
-          <Link to="/register" className= "submit" >Register</Link>
+          {/* <Link to="/register" className= "submit" >Register</Link> */}
       </div>
 
       </form>

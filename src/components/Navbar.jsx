@@ -57,31 +57,31 @@ const Navbar = () => {
       elevation={3}
     >
       <BottomNavigation sx={{ gap: "10px" }} value={value}>
-        <Link to="/">
+        {/* <Link to="/">
           <BottomNavigationAction
             value="Home"
             label="Home"
             icon={value === "Home" ? <Home color="primary" /> : <HomeOutlined />}
           />
-        </Link>
-        <Link to="/katalog">
+        </Link> */}
+        {/* <Link to="/katalog">
           <BottomNavigationAction
             value="Katalog"
             label="Katalog"
             sx={{ color: value === "Katalog" ? "#007BFF" : "" }}
             icon={<ShoppingBagOutlined />}
           />
-        </Link>
-        <Link to="/profile">
+        </Link> */}
+        {/* <Link to="/profile">
           <BottomNavigationAction
             value="Profile"
             label="Profile"
             sx={{ color: value === "Profile" ? "#007BFF" : "" }}
             icon={<PersonOutlined />}
           />
-        </Link>
+        </Link> */}
         {auth.roles[0] === 'admin' || auth.roles[0] === 'superadmin' && (
-             <Link to="/dashboard">
+             <Link to="/">
              <BottomNavigationAction
                value="Dashboard"
                label="Dashboard"

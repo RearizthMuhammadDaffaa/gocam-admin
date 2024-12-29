@@ -48,7 +48,7 @@ const ListMerk = () => {
             borderRadius: "20px",
           }}
         >
-         <Link to='/dashboard'>        
+         <Link to='/'>        
           <ArrowBack />
           </Link>
         </Box>

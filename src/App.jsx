@@ -35,6 +35,11 @@ import RequireAuth from "./components/RequiredAuth";
 import ListMerk from "./pages/ListMerk";
 import AddMerk from "./pages/merk/AddMerk";
 import EditMerk from "./pages/merk/EditMerk";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+import EditUserRental from "./pages/EditUserRental";
+
+const stripePromise = loadStripe(`${import.meta.env.VITE_STRIPE_PUBLIC_KEY}`);
 
 function App() {
   const ROLES = {
@@ -55,14 +60,14 @@ function App() {
         <Route element={<Layout />}>
           <Route
             element={
-              <RequireAuth allowedRoles={[ROLES.SuperAdmin, ROLES.Admin,ROLES.User]} />
+              <RequireAuth allowedRoles={[ROLES.SuperAdmin, ROLES.Admin]} />
             }
           >
-            <Route path="/" element={<Home />} />
+            {/* <Route path="/" element={<Home />} /> */}
             <Route path="/katalog" element={<Katalog />} />
             <Route path="/:id" element={<DetailKamera />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+            {/* <Route path="/profile" element={<Profile />} /> */}
+            <Route path="/" element={<Dashboard />} />
             <Route path="/dashboard/ListKamera" element={<ListKamera />} />
             <Route path="/dashboard/UserRental" element={<UserRental />} />
             <Route path="/dashboard/merk" element={<ListMerk />} />
@@ -70,8 +75,16 @@ function App() {
             <Route path="/dashboard/editkamera/:id" element={<EditKamera />} />
             <Route path="/dashboard/addmerk" element={<AddMerk />} />
             <Route path="/dashboard/editmerk/:id" element={<EditMerk />} />
-            <Route path="/transaksi/:id" element={<DaysTransaksi />} />
-            <Route path="/day/:id" element={<HoursTransaksi />} />
+            <Route path="/dashboard/editUserRental/:id" element={<EditUserRental />} />
+            {/* <Route
+            path="/transaksi/:id"
+            element={
+              <Elements stripe={stripePromise}>
+                <DaysTransaksi />
+              </Elements>
+            }
+          /> */}
+            {/* <Route path="/day/:id" element={<HoursTransaksi />} /> */}
             <Route path="/search/:search" element={<SearchList />} />
           </Route>
         </Route>

@@ -51,7 +51,7 @@ const UserRental = () => {
             borderRadius: "20px",
           }}
         >
-          <Link to='/dashboard'>        
+          <Link to='/'>        
           <ArrowBack />
           </Link>
         </Box>
@@ -87,6 +87,7 @@ const UserRental = () => {
             <TableCell align="center">START DATE</TableCell>
             <TableCell align="center">END DATE</TableCell>
             <TableCell align="center">HOURS RENT</TableCell>
+            <TableCell align="center">Status</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -100,9 +101,13 @@ const UserRental = () => {
               <TableCell align="center">{row.startDate}</TableCell>
               <TableCell align="center">{row.endDate}</TableCell>
               <TableCell align="center">{row.hoursRent}</TableCell>
+              <TableCell align="center">{row.statusPengambilan}</TableCell>
               <TableCell align="center">
-               
-                <Button variant="contained" color='success' onClick={()=>deletekamera(row.id)}>Delete</Button>
+                 
+              <Button variant="contained" color='error' onClick={()=>deletekamera(row.id)}>Delete</Button>
+                <Link to={`/dashboard/editUserRental/${row.id}`}>
+                <Button variant="contained" color='success'>Update</Button>
+                </Link>
               </TableCell>
             </TableRow>
           ))}
